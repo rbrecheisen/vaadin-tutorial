@@ -1,0 +1,8 @@
+- install maven using brew
+- test run app
+- create dockerfile
+- create docker-compose.yml
+- run using docker
+- push to docker hub
+- pull on strato server
+- test run app on strato server
