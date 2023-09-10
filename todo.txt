@@ -1,10 +1,11 @@
-x install maven using brew
-x test run app
+x install maven using homebrew (brew install maven)
+x test run app (mvn)
 x create dockerfile
-x install docker (via HomeBrew)
-x build production package using Maven
-x build docker image
-x run using docker
-- push to docker hub
-- pull on strato server
-- test run app on strato server
+x install docker (brew install --cask docker)
+x build production package using Maven (mvn clean package -Pproduction)
+x build docker image (docker build . -t brecheisen/myapp:latest)
+x run using docker (docker run -p 8080:8080 brecheisen/myapp:latest)
+x login to dockerhub (docker login)
+x push to dockerhub (docker push brecheisen/myapp:latest)
+x login to dockerhub on strato server (docker login)
+x run on strato server (docker run -p 8080:8080 brecheisen/myapp:latest)
