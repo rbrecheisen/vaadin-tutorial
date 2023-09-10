@@ -1,9 +1,10 @@
 x install maven using brew
 x test run app
-- create dockerfile
-- install docker (via HomeBrew)
-- build docker image
-- run using docker
+x create dockerfile
+x install docker (via HomeBrew)
+x build production package using Maven
+x build docker image
+x run using docker
 - push to docker hub
 - pull on strato server
 - test run app on strato server
