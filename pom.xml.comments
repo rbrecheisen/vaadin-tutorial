@@ -1,0 +1,79 @@
+<!-- Standard XML declaration; UTF-8 encoding -->
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Standard Maven project definition with XML namespace and schema definitions -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <!-- Version of the Project Object Model (POM) you're using -->
+    <modelVersion>4.0.0</modelVersion>
+    
+    <!-- Group, artifact, and version identifiers. Think of this as your project's full name in the Maven repository. -->
+    <groupId>com.example.application</groupId>
+    <artifactId>mytodo</artifactId>
+    <name>mytodo</name>
+    <version>1.0-SNAPSHOT</version>
+    
+    <!-- Packaging type. You're creating a JAR file. -->
+    <packaging>jar</packaging>
+
+    <!-- Custom properties that can be referenced elsewhere in the POM -->
+    <properties>
+        <java.version>17</java.version>
+        <vaadin.version>24.1.7</vaadin.version>
+    </properties>
+
+    <!-- Specifies parent POM; inherits configurations from Spring Boot Starter Parent -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.1.2</version>
+    </parent>
+
+    <!-- Custom Maven repositories; adding Vaadin's repository -->
+    <repositories>
+        <repository>
+            <id>Vaadin Directory</id>
+            <url>https://maven.vaadin.com/vaadin-addons</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!-- Dependency Management block; locks versions of dependencies -->
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-bom</artifactId>
+                <version>${vaadin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <!-- List of dependencies your project needs -->
+    <dependencies>
+        <!-- Various dependencies, such as Vaadin and Spring Boot modules -->
+        <!-- ... -->
+    </dependencies>
+
+    <!-- Build configuration and plugins -->
+    <build>
+        <defaultGoal>spring-boot:run</defaultGoal>
+        <plugins>
+            <!-- Spring Boot and Vaadin plugins -->
+            <!-- ... -->
+        </plugins>
+    </build>
+
+    <!-- Profiles for different build configurations -->
+    <profiles>
+        <!-- Profiles for production and integration testing -->
+        <!-- ... -->
+    </profiles>
+
+</project>
