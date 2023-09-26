@@ -1,7 +1,6 @@
 package com.example.application.views;
 
 import com.example.application.security.SecurityService;
-import com.example.application.views.list.ListView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
@@ -17,18 +16,18 @@ public class MainLayout extends AppLayout {
 
     public MainLayout(SecurityService securityService) {
         this.securityService = securityService;
-        createHeader();
-        createDrawer();
+        this.createHeader();
+        this.createDrawer();
     }
 
     private void createHeader() {
-        H1 logo = new H1("Vaadin CRM");
+        H1 logo = new H1("Kosten App");
         logo.addClassNames(
             LumoUtility.FontSize.LARGE,
             LumoUtility.Margin.MEDIUM);
 
-        String u = securityService.getAuthenticatedUser().getUsername();
-        Button logout = new Button("Log out " + u, e -> securityService.logout()); // <2>
+        String u = this.securityService.getAuthenticatedUser().getUsername();
+        Button logout = new Button("Log out " + u, e -> this.securityService.logout()); // <2>
 
         var header = new HorizontalLayout(new DrawerToggle(), logo, logout);
 
@@ -39,13 +38,13 @@ public class MainLayout extends AppLayout {
             LumoUtility.Padding.Vertical.NONE,
             LumoUtility.Padding.Horizontal.MEDIUM);
 
-        addToNavbar(header); 
+        this.addToNavbar(header); 
 
     }
 
     private void createDrawer() {
-        addToDrawer(new VerticalLayout(
-                new RouterLink("List", ListView.class)
+        this.addToDrawer(new VerticalLayout(
+                new RouterLink("Hoofdmenu", MainMenuView.class)
         ));
     }
 }
