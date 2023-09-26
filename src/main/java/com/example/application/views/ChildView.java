@@ -24,7 +24,7 @@ public class ChildView extends VerticalLayout {
     H1 title;
     ComboBox<String> comboBoxName;
     TextField textFieldPrice;
-    TextField textFieldObjectBought;
+    TextField textFieldItemBought;
     Button buttonSave;
     String selectedName = "";
     
@@ -32,7 +32,7 @@ public class ChildView extends VerticalLayout {
         this.add(this.getTitle());
         this.add(this.getComboBoxName());
         this.add(this.getTextFieldPrice());
-        this.add(this.getTextFieldObjectBought());
+        this.add(this.getTextFieldItemBought());
         this.add(this.getButtonSave());
     }
 
@@ -61,11 +61,11 @@ public class ChildView extends VerticalLayout {
         return this.textFieldPrice;
     }
 
-    private TextField getTextFieldObjectBought() {
-        if (this.textFieldObjectBought == null) {
-            this.textFieldObjectBought = new TextField("Gekocht voorwerp");
+    private TextField getTextFieldItemBought() {
+        if (this.textFieldItemBought == null) {
+            this.textFieldItemBought = new TextField("Gekocht voorwerp");
         }
-        return this.textFieldObjectBought;
+        return this.textFieldItemBought;
     }
 
     private Button getButtonSave() {
@@ -75,7 +75,7 @@ public class ChildView extends VerticalLayout {
             this.buttonSave.addClickListener(e -> {
                 System.out.println(
                     "Voor " + this.selectedName + " " +
-                    "heb ik " + this.getTextFieldObjectBought().getValue() + " gekocht " + 
+                    "heb ik " + this.getTextFieldItemBought().getValue() + " gekocht " + 
                     "voor " + this.getTextFieldPrice().getValue() + " euro"
                 );
             });
